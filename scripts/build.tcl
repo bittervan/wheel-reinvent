@@ -10,6 +10,11 @@ set place_directive Default
 set phys_directive  Default
 set route_directive Default
 
+file mkdir build
+file mkdir build/output
+file mkdir build/synth
+file mkdir build/impl
+
 proc blueputs {msg} {
     puts "\033\[34m$msg\033\[0m"
 }

@@ -5,6 +5,6 @@ synth_ip [get_ips]
 synth_design -top $top -part $part -directive $synth_directive
 
 # Write netlist
-write_checkpoint -force     build/synth/checkpoint
+write_checkpoint -force     build/synth/synth.dcp
 report_timing_summary -file build/synth/time.rpt
 report_utilization  -file   build/synth/util.rpt
