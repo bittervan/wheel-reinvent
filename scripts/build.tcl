@@ -10,7 +10,18 @@ set place_directive Default
 set phys_directive  Default
 set route_directive Default
 
+proc blueputs {msg} {
+    puts "\033\[34m$msg\033\[0m"
+}
+
+blueputs "Start building"
 source ./scripts/readsrc.tcl
-source ./scripts/synth.tcl
-source ./scripts/impl.tcl
+
+blueputs "Start synthesis"
+source ./scripts/synth.tcl > build/synth/synth.log
+
+blueputs "Start implementation"
+source ./scripts/impl.tcl > build/impl/impl.log
+
+blueputs "Start bitstream generation"
 source ./scripts/genbit.tcl
